@@ -1,0 +1,13 @@
+<%= form_for @message do |f| %>
+  <div>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </div>
+
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit 'Сохранить'%>
+<% end %>

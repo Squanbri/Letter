@@ -1,0 +1,7 @@
+<h1> Все сообщения </h1>
+<% @messages.each do |message| %>
+  <h2><%= message.company %></h2>
+  <div>
+    <%= link_to 'Удалить', message_path(message),  method: :delete, data: { confirm: 'Вы уверены?' } %>
+  </div>
+<% end %>
