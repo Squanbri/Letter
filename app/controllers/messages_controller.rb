@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(post_params)
     if @message.save
+      RequestMailer.send_request(@message).deliver
       redirect_to root_path
     else
       render new

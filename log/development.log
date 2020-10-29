@@ -2373,3 +2373,513 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.2ms | Allocations: 5715)
 
 
+Started GET "/" for ::1 at 2020-10-29 23:07:44 +0300
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 74ms (Views: 60.2ms | ActiveRecord: 1.1ms | Allocations: 20249)
+
+
+Started GET "/" for ::1 at 2020-10-29 23:08:30 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 802)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.2ms | Allocations: 5751)
+
+
+Started GET "/" for ::1 at 2020-10-29 23:56:33 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 956)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.3ms | Allocations: 7168)
+
+
+Started GET "/messages/new" for ::1 at 2020-10-29 23:56:36 +0300
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (Duration: 19.9ms | Allocations: 5490)
+  Rendered messages/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 5779)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.1ms | Allocations: 10777)
+
+
+Started POST "/messages" for ::1 at 2020-10-29 23:56:43 +0300
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"vTwgCXKwrgJYwh5+Y+0zXO3noWdfhSWGBpuSXj7cAduxL3BmnMnpPRXMylyqb4l4RgQAHXq8cYsyPlsJYK0KJA==", "message"=>{"company"=>"STR", "body"=>"21312"}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "STR"], ["body", "21312"], ["created_at", "2020-10-29 20:56:43.853197"], ["updated_at", "2020-10-29 20:56:43.853197"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (402.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 410ms (ActiveRecord: 402.4ms | Allocations: 2904)
+
+
+Started GET "/" for ::1 at 2020-10-29 23:56:44 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.2ms | Allocations: 5778)
+
+
+Started DELETE "/messages/7" for ::1 at 2020-10-30 00:03:14 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dcSzI6lnuah1KSfeVSC9wk0vedgjbnB63lOtx0/8NXZC2ppPe0OyorXpn7cYxv9NP0PFPTFUEf72pINw0VmhLA==", "id"=>"7"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:21:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[35m (165.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 166.1ms | Allocations: 7605)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:03:14 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.8ms | Allocations: 16591)
+
+
+Started GET "/messages/new" for ::1 at 2020-10-30 00:03:15 +0300
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (Duration: 7.5ms | Allocations: 2966)
+  Rendered messages/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.1ms | Allocations: 8343)
+
+
+Started POST "/messages" for ::1 at 2020-10-30 00:03:20 +0300
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"KxbD/D8Q+7g88YhIbCqIXPeC8eyd5koojQEfzipezf0nBZOT0Wm8h3H/XGqlqDJ4XGFQlrjfHiW5pNaZdC/GAg==", "message"=>{"company"=>"STR", "body"=>"123123124"}, "commit"=>"Сохранить"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "STR"], ["body", "123123124"], ["created_at", "2020-10-29 21:03:20.080668"], ["updated_at", "2020-10-29 21:03:20.080668"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (329.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+RequestMailer#send_request: processed outbound mail in 8.4ms
+Completed 500 Internal Server Error in 407ms (ActiveRecord: 329.4ms | Allocations: 35038)
+
+
+  
+NoMethodError (undefined method `to' for #<RequestMailer:0x000055f3e634faa0>
+Did you mean?  t):
+  
+app/mailers/request_mailer.rb:7:in `send_request'
+app/controllers/messages_controller.rb:13:in `create'
+Started POST "/messages" for ::1 at 2020-10-30 00:04:04 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"XoTr/h9EFmsuWwNX+WqSbbx2ddGLxGPKPlOsL4nrgOBpmsKSzWAdYe6buz60jNDizhrJNJn+Ak4WpIKYF04Uug==", "message"=>{"company"=>"STR", "body"=>"123123124"}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "STR"], ["body", "123123124"], ["created_at", "2020-10-29 21:04:04.761614"], ["updated_at", "2020-10-29 21:04:04.761614"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (232.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+RequestMailer#send_request: processed outbound mail in 6.5ms
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 232.9ms | Allocations: 13835)
+
+
+  
+NoMethodError (undefined method `to' for #<RequestMailer:0x00007f6c50194448>
+Did you mean?  t):
+  
+app/mailers/request_mailer.rb:7:in `send_request'
+app/controllers/messages_controller.rb:13:in `create'
+Started POST "/messages" for ::1 at 2020-10-30 00:04:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"XoTr/h9EFmsuWwNX+WqSbbx2ddGLxGPKPlOsL4nrgOBpmsKSzWAdYe6buz60jNDizhrJNJn+Ak4WpIKYF04Uug==", "message"=>{"company"=>"STR", "body"=>"123123124"}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "STR"], ["body", "123123124"], ["created_at", "2020-10-29 21:04:43.827410"], ["updated_at", "2020-10-29 21:04:43.827410"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (176.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  Rendering mailers/request/send_request.text.erb within layouts/mailer
+  Rendered mailers/request/send_request.text.erb within layouts/mailer (Duration: 0.4ms | Allocations: 89)
+RequestMailer#send_request: processed outbound mail in 6.6ms
+Delivered mail 5f9b2e6c6f32_50f583a46467c@squanbri-Virtual-Machine.mail (17.9ms)
+Date: Fri, 30 Oct 2020 00:04:44 +0300
+From: info@mystore.localhost
+To: Squanbri@gmail.com
+Message-ID: <5f9b2e6c6f32_50f583a46467c@squanbri-Virtual-Machine.mail>
+Subject: Message sent
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message sent STR
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 238ms (ActiveRecord: 176.7ms | Allocations: 18110)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:04:44 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1022)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 112ms (Views: 110.5ms | ActiveRecord: 0.8ms | Allocations: 12619)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:06 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 5908)
+
+
+Started GET "/messages/new" for ::1 at 2020-10-30 00:07:08 +0300
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (Duration: 2.6ms | Allocations: 638)
+  Rendered messages/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.1ms | Allocations: 5613)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:10 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 5895)
+
+
+Started DELETE "/messages/8" for ::1 at 2020-10-30 00:07:13 +0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5G46aNPTU6Ckfh36ciWQiS9lOZRgWVLwTTFhP61KDnPTcBMEAfdYqmS+pZM/w9IGXQmFcXJjM3Rlxk+IM++aKQ==", "id"=>"8"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:21:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[35m (186.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 187.3ms | Allocations: 3891)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:13 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 920)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.2ms | Allocations: 5874)
+
+
+Started DELETE "/messages/9" for ::1 at 2020-10-30 00:07:16 +0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XzOBY7lgUCWoXqqBof1R1nKApZOqOXNjTcjLqryWIvNoLagPa0RbL2ieEujsGxNZAOwZdrgDEudlP+UdIjO2qQ==", "id"=>"9"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:21:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[35m (374.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 381ms (ActiveRecord: 375.1ms | Allocations: 3769)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:17 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 5770)
+
+
+Started DELETE "/messages/10" for ::1 at 2020-10-30 00:07:19 +0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Weda9xGUqUaGeQNaTEf6dp+kiR9cKeLL54C7BbDsVrBu+XObw7CiTEa5uzMBobj57cg1+k4Tg0/Pd5WyLknC6g==", "id"=>"10"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:21:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[35m (187.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 194ms (ActiveRecord: 187.3ms | Allocations: 3755)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:20 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 792)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.4ms | Allocations: 5699)
+
+
+Started GET "/messages/new" for ::1 at 2020-10-30 00:07:20 +0300
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (Duration: 0.9ms | Allocations: 566)
+  Rendered messages/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 626)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.4ms | Allocations: 5540)
+
+
+Started POST "/messages" for ::1 at 2020-10-30 00:07:25 +0300
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"14WBkfrFkEb4gB5+R54/rJjV6Qg/qspl4cPl7LgaBn3bltH+FLzXebWOylyOHIWIMzZIchqTnmjVZiy75msNgg==", "message"=>{"company"=>"STR", "body"=>"123"}, "commit"=>"Сохранить"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "STR"], ["body", "123"], ["created_at", "2020-10-29 21:07:25.218039"], ["updated_at", "2020-10-29 21:07:25.218039"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (346.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  Rendering mailers/request/send_request.text.erb within layouts/mailer
+  Rendered mailers/request/send_request.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+RequestMailer#send_request: processed outbound mail in 1.1ms
+Delivered mail 5f9b2f0d8b7b7_50f583a464722@squanbri-Virtual-Machine.mail (23.2ms)
+Date: Fri, 30 Oct 2020 00:07:25 +0300
+From: info@mystore.localhost
+To: Squanbri@gmail.com
+Message-ID: <5f9b2f0d8b7b7_50f583a464722@squanbri-Virtual-Machine.mail>
+Subject: Message sent
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message sent STR
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 381ms (ActiveRecord: 346.4ms | Allocations: 10048)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:25 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.2ms | Allocations: 5790)
+
+
+Started DELETE "/messages/11" for ::1 at 2020-10-30 00:07:34 +0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WJm57BFztLFqSqLcTyzAcMDyOBvSimiX6s/W6fJdGHxvh5CAw1e/u6qKGrUCyoL/sp6E/sCwCRPCOPhebPiMJg==", "id"=>"11"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:21:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[36mMessage Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+  [1m[35m (193.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:22:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 194.1ms | Allocations: 3755)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:34 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 792)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms | Allocations: 5721)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:07:56 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 79ms (Views: 64.0ms | ActiveRecord: 1.1ms | Allocations: 20248)
+
+
+Started GET "/messages/new" for ::1 at 2020-10-30 00:07:57 +0300
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (Duration: 6.3ms | Allocations: 2967)
+  Rendered messages/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms | Allocations: 8340)
+
+
+Started POST "/messages" for ::1 at 2020-10-30 00:08:02 +0300
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"JMvq7S0wadGTgM+T8KG08/eadiZfWj3JwymoAPT4NRgo2LqCw0ku7t6OG7E5Iw7XXHnXXHpjacT3jGFXqok+5w==", "message"=>{"company"=>"STR", "body"=>"123123"}, "commit"=>"Сохранить"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "STR"], ["body", "123123"], ["created_at", "2020-10-29 21:08:03.004797"], ["updated_at", "2020-10-29 21:08:03.004797"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (363.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  Rendering mailers/request/send_request.text.erb within layouts/mailer
+  Rendered mailers/request/send_request.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 90)
+RequestMailer#send_request: processed outbound mail in 4.3ms
+Delivered mail 5f9b2f336bc0b_53dc5dd4328c@squanbri-Virtual-Machine.mail (148.5ms)
+Date: Fri, 30 Oct 2020 00:08:03 +0300
+From: info@mystore.localhost
+To: Squanbri@gmail.com
+Message-ID: <5f9b2f336bc0b_53dc5dd4328c@squanbri-Virtual-Machine.mail>
+Subject: Message sent
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message sent STR
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 586ms (ActiveRecord: 364.1ms | Allocations: 35589)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:08:03 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms | Allocations: 5787)
+
+
+Started GET "/messages/new" for ::1 at 2020-10-30 00:10:01 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/_form.html.erb (Duration: 1.1ms | Allocations: 631)
+  Rendered messages/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 54ms (Views: 42.3ms | ActiveRecord: 1.2ms | Allocations: 15267)
+
+
+Started POST "/messages" for ::1 at 2020-10-30 00:10:08 +0300
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"KGI019RuaJ6DfPnlUHbammHyjDJsjfkxSWEXscUess0kcWS4Ohcvoc5yLceZ9GC+yhEtSEm0rTx9xN7mm2+5Mg==", "message"=>{"company"=>"SPB", "body"=>"321"}, "commit"=>"Сохранить"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("company", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["company", "SPB"], ["body", "321"], ["created_at", "2020-10-29 21:10:08.810864"], ["updated_at", "2020-10-29 21:10:08.810864"]]
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  [1m[35m (437.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:12:in `create'
+  Rendering mailers/request/send_request.text.erb within layouts/mailer
+  Rendered mailers/request/send_request.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 5)
+RequestMailer#send_request: processed outbound mail in 2.4ms
+Delivered mail 5f9b2fb141e0d_53dc5d7033a@squanbri-Virtual-Machine.mail (142.3ms)
+Date: Fri, 30 Oct 2020 00:10:09 +0300
+From: info@mystore.localhost
+To: Enya-ma@mail.ru
+Message-ID: <5f9b2fb141e0d_53dc5d7033a@squanbri-Virtual-Machine.mail>
+Subject: Message sent
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message sent SPB
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 602ms (ActiveRecord: 437.9ms | Allocations: 10193)
+
+
+Started GET "/" for ::1 at 2020-10-30 00:10:09 +0300
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:2
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 944)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 5868)
+
+
