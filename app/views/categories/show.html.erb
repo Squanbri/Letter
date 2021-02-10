@@ -1,0 +1,16 @@
+<%= link_to 'Назад', categories_path, class: 'btn btn-primary' %>
+<h1 class="text-center"> <%= @category.title %> </h1>
+<div class="container">
+  <% @category.competencies.each do |competency| %>
+    <%= link_to category_competency_skill_path(competency.category, competency), class:'w-75' do %>
+      <div class="row mb-1">
+        <li class="list-group-item"> <%= competency.title %> </li>
+        <%= link_to "Изменить", edit_category_competency_path(@category, competency), class: 'btn btn-warning'%>
+        <%= link_to "Удалить", category_competency_path(@category, competency), class: 'btn btn-danger', method: :delete, data: { confirm: "you are sure?" } %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <h1 class="text-left">Добавить</h1>
+  <%= render "competencies/form" %>
+</div>

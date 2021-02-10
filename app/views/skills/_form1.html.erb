@@ -1,0 +1,4 @@
+<%= form_with create: @skill do |f| %>
+  <%= f.text_field :title, class: 'form-control', value: @skill.title %>
+  <%= f.submit 'Сохранить изменения', class: 'btn btn-success' %>
+<% end %>

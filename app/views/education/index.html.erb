@@ -1,0 +1,173 @@
+<div id="app">
+  <h1 class="text-center mt-md-4 mt-3" style="color:#2d2d2d; font-size: 36pt">Обучение</h1>
+
+  <!-- Форма -->
+
+  <div class="main mt-md-4 border round shadow bg-white mr-auto ml-auto">
+    <p id="p" class="mt-3 ml-4 time">Время</p>
+    <div class="row">
+
+      <!-- Текстовые поля для заполнения -->
+
+      <div class="col-lg-3 col-xl-3 col-md-11 mb-sm-0 mt-md-2 ml-lg-4 ml-md-4 mx-sm-4 mx-2" id="inputs">
+        <form name="contact">
+          <input type="text" name="Fio" placeholder="ФИО" class="fill" style="margin-bottom: 16%"><br>
+          <input type="tel" name="Tel" placeholder="Номер телефона" class="fill" style="margin-bottom: 16%"><br>
+          <textarea name="Comm" placeholder="Дополнительная информация" class="fill"></textarea>
+        </form>
+      </div>
+
+      <!-- Текстовые поля для заполнения - конец -->
+
+      <div class="col-lg-8 col-md-12 col-sm-12 mt-md-2 mt-lg-0">
+        <div class="row" style="width: 122%">
+
+          <!-- Выбор навыков по компетенциям и направлениям -->
+
+          <div class="bloc mx-2 mx-sm-0 ml-lg-1 mt-sm-4 mt-lg-2 w-25"><span
+            class="text-center d-block mr-1 headers mb-3">Направления</span>
+            <ul class="list-group catList list" id="categories">
+              <li v-for="(category, index) in categories"
+                  :class="{ 'list-group-itemActive': selCategoryItem == index, 'list-group-item': selCategoryItem != index }"
+                  @click="selCategory(index)">{{ category.title }}</li>
+            </ul>
+          </div>
+          <div class="bloc mx-2 mx-sm-0 mx-md-0 a1 mt-4 mt-sm-4 mt-lg-2 w-25"><span
+            class="text-center d-block mr-3 headers mb-3">Компетенции</span>
+            <ul class="list-group list" id="competencies">
+              <li v-for="(competency, index) in competencies"
+                  :class="{ 'list-group-itemActive': selCompetencyItem == index, 'list-group-item': selCompetencyItem != index }"
+                  @click="selCompetency(index), renameSpecialist(index)">{{ competency.title }}</li>
+            </ul>
+          </div>
+          <div class="bloc skillBloc mx-2 mx-md-0 mt-4 mt-sm-4 mt-lg-2 w-25"><span
+            class="text-center d-block mr-3 headers mb-3">Навыки</span>
+            <ul class="list-group list skillsList" id="skills">
+              <li v-for="(skill, index) in skills"
+                  :class="{ 'list-group-itemActive': specialists[selectSpecialist].selectSkills.includes(skill.title), 'list-group-item': !specialists[selectSpecialist].selectSkills.includes(skill.title) }"
+                  @click="selSkill(index)"> {{ skill.title }} </li>
+            </ul>
+          </div>
+
+          <!-- Выбор навыков по компетенциям и направлениям - конец -->
+
+        </div>
+        <div class="row">
+
+          <!-- Специалисты -->
+
+          <div class="ml-3 ml-md-4 ml-lg-1 ml-sm-4 mt-2 w-100" id="basementForm">
+
+            <!-- Добавление спецов -->
+
+            <p class="text-start mt-md-4 mt-3 platforms" style="color:#2d2d2d;">Доступные площадки с курсами</p>
+            <div v-for="(specialist, indexSpecialist) in specialists">
+              <div class="row mt-2 w-100" :class="{ 'unactive': indexSpecialist != selectSpecialist}">
+
+                <!--Учебные площадки-->
+
+                <div class="ml- ml-md-4 ml-lg-1 ml-sm-4 mt-2 w-100" style="margin-bottom: 16%">
+
+                  <div class="row w-100 mb-5 itemEducation d-flex pb-0 pl-0 ml-3">
+                    <div class="bodyItemEducation ">
+                      <img src="images/education-konyaeva.png" />
+                    </div>
+                    <div class="bodyItemEducation ml-4">
+                      <p class="text-start" style="vertical-align: -10px">ГБПОУ им. А.Н. Коняева</p>
+                      <span style="vertical-align: bottom " class="caption"><u><a
+                        href="http://Uroki-HTML.ru/index.php">Подробнее о курсе</a></u></span>
+                    </div>
+                  </div>
+
+                  <div class="row w-100 mb-5 itemEducation d-flex pb-0 ml-3">
+                    <div class="bodyItemEducation">
+                      <img src="images/education-geekbrains.svg" />
+                    </div>
+                    <div class="bodyItemEducation ml-4">
+                      <p class="text-start" style="vertical-align: -10px">GeekBrains</p>
+                      <span style="vertical-align: bottom" class="caption"><u><a
+                        href="http://Uroki-HTML.ru/index.php">Подробнее о курсе</a></u></span>
+                    </div>
+                  </div>
+
+                  <div class="row w-100 mb-5 itemEducation d-flex pb-0 ml-3">
+                    <div class="bodyItemEducation">
+                      <img src="images/education-mailru.svg" />
+                    </div>
+                    <div class="bodyItemEducation ml-4">
+                      <p class="text-start" style="vertical-align: -10px">Mail.ru</p>
+                      <span style="vertical-align: bottom" class="caption"><u><a
+                        href="http://Uroki-HTML.ru/index.php">Подробнее о курсе</a></u></span>
+                    </div>
+                  </div>
+
+                  <div class="row w-100 mb-5 itemEducation d-flex pb-0 ml-3">
+                    <div class="bodyItemEducation">
+                      <img src="images/education-yandex.svg" />
+                    </div>
+                    <div class="bodyItemEducation ml-4">
+                      <p class="text-start" style="vertical-align: -10px">Yandex Practicum</p>
+                      <span style="vertical-align: bottom" class="caption"><u><a
+                        href="http://Uroki-HTML.ru/index.php">Подробнее о курсе</a></u></span>
+                    </div>
+                  </div>
+                </div>
+                <!--Учебные площадки-->
+              </div>
+            </div>
+
+
+            <!-- Специалисты - конец -->
+
+          </div>
+        </div>
+
+        <!--Стоимость-->
+        <div class="row">
+          <div class="col-lg-8 ">
+            <p class="text-start price">Сумма</p>
+          </div>
+          <div class="col-lg-4">
+            <p class="text-end price1">1990,00 USD</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <p class="text-start price">Скидка 5%</p>
+          </div>
+          <div class="col-lg-4">
+            <p class="text-end price1">99,00 USD</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <p class="text-start price" style="color: #2D2D2D">ИТОГОВАЯ СУММА</p>
+          </div>
+          <div class="col-lg-4">
+            <p class="text-end price">1891,00 USD</p>
+          </div>
+        </div>
+
+
+
+        <!--Стоимость-конец-->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  Форма - конец -->
+
+<!-- Отправочная кнопка -->
+
+<input type="button" class="send mt-4 px-5 py-2" value="Отправить" onclick="Send()"></button>
+<p class="text-center mt-3 pb-3" style="opacity: 0.3; font-size: 15px">Нажимая кнопку "Отправить", вы даёте согласие
+  на обработку
+  персональных данных<br>и соглашетесь с политикой конфиденциальности.</p>
+
+<!-- Отправочная кнопка - конец -->
+</div>
+<%= javascript_pack_tag 'education' %>

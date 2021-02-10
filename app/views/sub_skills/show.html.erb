@@ -1,0 +1,33 @@
+<%= link_to 'Назад', category_competency_skill_path(@category, @competency), class: 'btn btn-primary' %>
+<h1 class="text-center"> <%= @skill.title %> </h1>
+<div class="container">
+  <% @sub_skills.each do |sub_skill| %>
+    <div class="row mb-1">
+      <li class="list-group-item w-100"> <%= sub_skill.title %> </li>
+      <%= link_to "Изменить", edit_category_competency_skill_sub_skill_path(@category, @competency, @skill, sub_skill), class: 'btn btn-warning'%>
+      <%= link_to "Удалить", category_competency_skill_sub_skill_path(sub_skill), class: 'btn btn-danger', method: :delete, data: { confirm: "you are sure?" } %>
+      <%#= link_to "Удалить", category_competency_skill_path(@category, @competency, skill), class: 'btn btn-danger', method: :delete, data: { confirm: "you are sure?" } %>
+    </div>
+  <% end %>
+
+  <h1 class="text-left">Добавить</h1>
+  <%= form_for([@category, @competency, @skill, @sub_skill]) do |f| %>
+    <div class="row mb-2">
+      <div class="col-10 form-group">
+        <%= f.label :title, "Название скилла" %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Добавить скилл', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+
+  <%#= form_for([@category, @competency, @skill]) do |f| %>
+<!--    <div class="row mb-2">-->
+<!--      <div class="col-10 form-group">-->
+        <%#= f.label :title, "Название скилла" %>
+        <%#= f.text_field :title, class: 'form-control' %>
+<!--      </div>-->
+      <%#= f.submit 'Добавить скилл', class: 'btn btn-success' %>
+<!--    </div>-->
+  <%# end %>
+</div>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Claim</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %>
+    <%= javascript_pack_tag 'application' %>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Шапка -->
+    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light w-100">
+      <div class="container-fluid">
+        <%= link_to main_index_path, class:'btn mr-auto pl-0 ml-0 ml-md-3 ml-lg-4 ml-xl-5 d-flex mt-2' do %>
+          <img src="/icons/logo-black.svg" class="mb-2" />
+          <div class="w-100 mt-1 logo">
+            <span class="font-weight-bold mr-1">Specialists</span><br />
+            <span class="ml-2 font-weight-bold">Upper Volga</span>
+          </div>
+        <% end %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0 ml-auto">
+            <li class="nav-item">
+              <%= link_to main_index_path, class:'btn my-2 pt-2 header-hover header-mob' do %>
+                <img src="/icons/header-main.svg" class="header-icon text-right" />
+                <span class="header-font ml-4 pl-1 ml-lg-0">Главная</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to request_index_path, class:'btn my-2 pt-2 header-blue header-mob pt-2' do %>
+                <img src="/icons/header-app-blue.svg" class="header-icon" />
+                <span class="header-font ml-4 ml-lg-0">Заявка</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to search_index_path, class:'btn my-2 header-hover header-mob' do %>
+                <img src="/icons/header-search.svg" class="header-icon" />
+                <span class="header-font ml-4 ml-lg-0">Поиск</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to education_index_path, class:'btn my-2 header-hover header-mob pt-2' do %>
+                <img src="/icons/header-education.svg" class="header-icon mr-1" />
+                <span class="header-font ml-2 ml-lg-0">Обучение</span>
+              <% end %>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0 ml-auto mr-0 mr-lg-5">
+            <li class="nav-item mt-0 ml-auto mr-0">
+              <% if user_signed_in? %>
+                <%= link_to destroy_user_session_path, class:'ml-auto mr-0', style: "cursor: pointer; text-decoration: none;" do %>
+                  <span class="font-weight-bold">Выйти</span>
+                  <img src="/icons/header-user.svg" class="ml-1" style="width: 40px;" />
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path, class:'ml-auto mr-0', style: "cursor: pointer; text-decoration: none;" do %>
+                  <span class="font-weight-bold mr-2">Войти</span>
+                <% end %>
+                <%= link_to new_user_registration_path, class:'ml-auto mr-0', style: "cursor: pointer; text-decoration: none;" do %>
+                  <span class="font-weight-bold">Регистрация</span>
+                  <img src="/icons/header-user.svg" class="ml-1" style="width: 40px;" />
+                <% end %>
+              <% end %>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Шапка - конец -->
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    <!-- Подвал -->
+
+    <div class="footer">
+      <div class="pt-5">
+        <div class="info_link mx-auto w-50 row d-flex pt-5 container-fluid text-light justify-content-center">
+          <div class="w-100 footer_info_column col-12 col-lg-2  d-flex flex-column ">
+            <span class="font-weight-bold h5 mb-3" style="min-width: 135px">О компании</span>
+            <a class="mb-2 footer-h">Наши партнеры</a>
+            <a class="mb-2 footer-h">Реквизиты</a>
+            <a class="mb-2 footer-h">Услуги</a>
+          </div>
+          <div class="w-100 footer_info_column col-12 col-lg-3 d-flex flex-column">
+            <span class="font-weight-bold h5 mb-3">Контактные данные</span>
+            <a href="https://lazur.media" class="mb-2 footer-h">lazur.media</a>
+            <a class="mb-2 footer-h">г. Тверь, ул. Гагарина, д. 1, офис 1 </a>
+            <a class="mb-2 footer-h">+7 (905) 604-08-88</a>
+          </div>
+          <div class="w-100 footer_info_column col-12 col-lg-2 d-flex flex-column ">
+            <span class="font-weight-bold h5 mb-3">Помощь</span>
+            <a class="mb-2 footer-h">Вход и регистрация</a>
+            <a class="mb-2 footer-h">FAQ</a>
+          </div>
+        </div>
+        <div class=" d-flex flex-column mt-5">
+          <div class="d-flex justify-content-center">
+            <a><img class="mx-4 footer-h" src="/icons/footer-facebook.svg" /></a>
+            <a><img class="mx-4 footer-h" src="/icons/footer-instagram.svg" /></a>
+            <a><img class="mx-4 footer-h" src="/icons/footer-twitter.svg" /></a>
+          </div>
+
+          <div class="d-block text-light text-center mt-5 mb-4 pt-3 mx-5"
+               style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <span style="opacity: 0.6" class="mb-3">© Specialists Upper Volga, 2021</span> <br>
+            <span class="text-center ml-1" style="opacity: 0.3; cursor: default">Все права
+              защищены</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Подвал - конец -->
+  </body>
+</html>

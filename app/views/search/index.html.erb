@@ -1,0 +1,95 @@
+<div style="background-image: url(images/education-header.svg); height: 100%; background-size: cover " class="w-100">
+  <h1 class="text-center pt-5 caption_text">Найди лучшее предложение</h1>
+  <h1 class="text-center caption_text"  style="color: white">на нашем рынке</h1>
+  <p class="text-center texts" style="color: white; margin: 0; font-size: 16px">Открой для себя новую ступень в карьере с <b style="font-weight: 500">1 337 228</b></p>
+  <p class="text-center texts" style="color: white; margin: 0; font-size: 16px">вакансиями на работу. Либо же сам найми самых опытных</p>
+  <p class="text-center texts mb-0" style="color: white; padding-bottom: 30px;font-size: 16px">специалистов.</p>
+
+</div>
+
+<!-- Формы -->
+
+<div class="row">
+
+
+  <!--Форма-фильра-->
+  <div class="col-lg-2 forms mt-md-4 mb-4 border round shadow bg-white " >
+    <p style="margin-top: 5%; font-size: 18px; font-weight: 700">Фильтры</p>
+    <div class="form-check" style="margin-bottom: 3%">
+      <input class="form-check-input" type="radio" name="flexRadioDefault"         id="flexRadioDefault1" placeholder="Дополнительная информация" >
+      <label class="form-check-label texts" for="flexRadioDefault1" style="font-size: 16px">
+        Список вакансий
+      </label>
+    </div>
+    <div class="form-check " style="margin-bottom: 5%">
+      <input class="form-check-input" type="radio" name="flexRadioDefault"         id="flexRadioDefault2" checked>
+      <label class="form-check-label texts" for="flexRadioDefault2" style="font-size: 16px">
+        Поиск персонала
+      </label>
+    </div>
+
+    <p style="font-size: 18px; font-weight: 700">Регион</p>
+    <div class="input-group input-group-sm mb-3 round">
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Локация...">
+    </div>
+
+    <p style="font-size: 18px; font-weight: 700">Направление</p>
+    <div class="input-group mb-3 border round">
+      <button class="btn btn-outline-secondary dropdown-toggle  w-100 " type="button" data-bs-toggle="dropdown" aria-expanded="inputGroup-sizing-sm">Все направления</button>
+      <ul class="dropdown-menu" id="categories">
+        <li v-for="(category, index) in categories"
+            :class="{ 'list-group-itemActive': selCategoryItem == index, 'list-group-item': selCategoryItem != index }"
+            @click="selCategory(index)">{{ category.title }}</li>
+      </ul>
+    </div>
+    <p style="font-size: 18px; font-weight: 700">Компетенции</p>
+    <div class="input-group mb-3 border round">
+      <button class="btn btn-outline-secondary dropdown-toggle  w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">Все компетенции </button>
+      <ul class="dropdown-menu" id="competencies">
+        <li v-for="(competency, index) in competencies"
+            :class="{ 'list-group-itemActive': selCompetencyItem == index, 'list-group-item': selCompetencyItem != index }"
+            @click="selCompetency(index), renameSpecialist(index)">{{ competency.title }}</li>
+      </ul>
+    </div>
+    <p style="font-size: 18px; font-weight: 700">Навыки</p>
+    <div class="input-group mb-3 border round ">
+      <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">Все навыки</button>
+      <ul class="dropdown-menu" id="skills">
+        <li v-for="(skill, index) in skills"
+            :class="{ 'list-group-itemActive': specialists[selectSpecialist].selectSkills.includes(skill.title), 'list-group-item': !specialists[selectSpecialist].selectSkills.includes(skill.title) }"
+            @click="selSkill(index)"> {{ skill.title }} </li>
+      </ul>
+    </div>
+    <div class="form-check mb-2 form-switch">
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+      <label class="form-check-label texts" for="flexSwitchCheckChecked" style="font-size: 16px">Только удалённо</label>
+    </div>
+  </div>
+  <!--Форма-фильра-конец-->
+  <!--Форма-выбора-->
+  <div class="col-lg-6 forms1 mt-md-4 border round shadow bg-white" style="margin-bottom: 4%">
+    <div class="row border_form">
+        <span class="ml-3 d-flex"><img src="icons/education-search.svg" class="rounded float-start search mb-2" alt="">
+            <div class="input-group mb-2 d-flex align-items-center" >
+              <input type="text" style="border: 0px" class="form-control search_inp mt-1" aria-label="Text input with dropdown button" size="65%" placeholder="Поиск...">
+              <div class="sort">
+              <label class="mt-2" style="font-size: 16px; font-weight: 300">Сортировка:</label>
+
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 16px">По Убыванию</button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="http://127.0.0.1:59063/index.html">От А до Я</a></li>
+                <li><a class="dropdown-item" href="http://127.0.0.1:59063/index.html">От Я до А</a></li>
+                <li><a class="dropdown-item" href="http://127.0.0.1:59063/index.html">По Возрастанию</a></li>
+                <li><a class="dropdown-item" href="http://127.0.0.1:59063/index.html">По Убыванию</a></li>
+                <li><a class="dropdown-item" href="http://127.0.0.1:59063/index.html">По Давности: Старые</a></li>
+                <li><a class="dropdown-item" href="http://127.0.0.1:59063/index.html">По Давности: Новые</a></li>
+                  </ul>
+                </div>
+            </div>
+            </span>
+    </div>
+  </div>
+  <!--Форма-выбора-конец-->
+
+</div>
+<!--  Формы - конец -->

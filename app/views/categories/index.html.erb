@@ -1,0 +1,15 @@
+<h1 class="text-center"> Все категории </h1>
+<div class="container">
+  <% @categories.each do |category| %>
+    <%= link_to category_path(category), class:'w-75' do %>
+      <div class="row mb-1">
+        <li class="list-group-item"> <%= category.title %> </li>
+        <%= link_to 'Изменить', edit_category_path(category), class: 'btn btn-warning' %>
+        <%= link_to "Удалить", category_path(category), class: 'btn btn-danger', method: :delete, data: { confirm: "you are sure?" } %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <h1 class="text-left">Добавить</h1>
+  <%= render "form" %>
+</div>

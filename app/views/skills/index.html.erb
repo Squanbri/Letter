@@ -1,0 +1,32 @@
+<div class="container text-center border">
+  <div class="text-left mt-3">
+    <%= link_to 'Назад', category_competencies_path(@category.id), class: 'btn btn-primary' %>
+    <%#= link_to 'Изменить',  edit_category_competency_skill(), class: 'btn btn-primary' %>
+    <%#= link_to 'Изменить',  cate%>
+    <span><%= @category.title %></span>
+    <span><%= @category.id %></span>
+  </div>
+
+  <h1><%= @competency.title %></h1>
+  <% @skills.each do |skill| %>
+    <% if skill.competency_id == @competency.id %>
+      <div class="row">
+        <div class="col-1"><span><%= skill.id %></span></div>
+        <input value="<%= skill.title %>" class="list-group-item w-75 mr-2">
+        <%= link_to "Удалить", category_competency_skill_path(@category, @competency, skill), method: :delete, data: { confirm: "you are sure?" } %>
+      </div>
+    <% end %>
+  <% end %>
+
+
+  <h1 class="text-left">Добавить</h1>
+  <%= form_with create: @skills, local: true do |f| %>
+    <div class="row mb-2">
+      <div class="col-10 form-group">
+        <%= f.label :title, "Название скилла" %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Добавить скилл', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
