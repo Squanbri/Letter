@@ -15,3 +15,19 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+const icons = ['header-app.svg', 'header-education.svg', 'header-main.svg', 'header-search.svg']
+const sectionsMenu = document.getElementsByClassName('sectionMenu')
+console.log(sectionsMenu)
+console.log(sectionsMenu.length)
+
+// sectionsMenu.from(elements).forEach(function(element) {
+//     element.addEventListener('click', () => {
+//         console.log(element)
+//     });
+// });
+
+for(let i=0; i<sectionsMenu.length; i++){
+    // sectionsMenu[i].addEventListener('click', () => {
+        console.log(sectionsMenu[i])
+    // });
+}

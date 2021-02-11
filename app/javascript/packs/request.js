@@ -1,5 +1,3 @@
-// import Vue from 'vue'
-// import App from '../app.vue'
 import Vue from 'vue/dist/vue.js';
 
 new Vue ({
